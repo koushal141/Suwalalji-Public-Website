@@ -1,77 +1,85 @@
 import React from "react";
 import styled from "styled-components";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 const Product = ({ image, name, price, id }) => {
   return (
-    <Wrapper>
-      <Link href={`/products/${id}`} passHref>
-        <Container>
-          <Image src={image} alt={name} />
-          <Linked>
+    <Link href={`/products/${id}`} passHref>
+      <Wrapper>
+        <Image src={image} alt={name} />
+        <Dets>
+          <Price>₹{price}</Price>
+          <Name>{name}</Name>
+          <GoButton>
+            <FaArrowRight />
+          </GoButton>
+        </Dets>
+        {/* <Linked>
             <FaSearch />
-          </Linked>
-        </Container>
-      </Link>
-      <footer>
+          </Linked> */}
+        {/* <footer>
         <h5>{name}</h5>
         <p>₹{price}</p>
-      </footer>
-    </Wrapper>
+      </footer> */}
+      </Wrapper>
+    </Link>
   );
 };
 
 const Image = styled.img`
   width: 100%;
-  display: block;
-  object-fit: cover;
-  border-radius: 20px;
+  height: 100%;
+  object-fit: contain;
   transition: ease-in-out 0.3s all;
-  height: 235px;
 `;
 const Wrapper = styled.article`
-  footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.8rem;
-    padding: 0 0.7rem;
-  }
-  footer h5,
-  footer p {
-    margin-bottom: 0.8rem;
-    font-weight: 600;
-    font-size: 1rem;
-    margin-top: 0;
-    cursor: pointer;
-  }
-  footer h5:hover {
-    text-decoration: underline;
-  }
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+  position: relative;
+  background: #fff;
+  transition: ease-in-out 0.3s all;
+  cursor: pointer;
+  box-shadow: 0px 0px 4px rgba(145, 158, 171, 0.24),
+    0px 16px 32px -4px rgba(145, 158, 171, 0.24);
+  border-radius: 16px;
+  padding-bottom: 2rem;
 
-  footer p {
-    color: hsl(22, 31%, 52%);
-    letter-spacing: 0.1rem;
+  &:hover {
+    transform: scale(1.05);
   }
 `;
 
-const Container = styled.div`
-  position: relative;
-  background: #fff;
-  border-radius: 25px;
-  transition: ease-in-out 0.3s all;
-  cursor: pointer;
+const Dets = styled.div`
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`;
 
-  -webkit-box-shadow: 2px 4px 14px -8px rgba(0, 0, 0, 0.65);
-  -moz-box-shadow: 2px 4px 14px -8px rgba(0, 0, 0, 0.65);
-  box-shadow: 2px 4px 14px -8px rgba(0, 0, 0, 0.65);
+const GoButton = styled.div`
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.2rem;
+  background: #f46036;
+  position: absolute;
+  right: -0.8rem;
+  bottom: 1.15rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+`;
 
-  &:hover img {
-    opacity: 0.5;
-  }
-  &:hover {
-    transform: translateY(-5px);
-  }
+const Price = styled.h5`
+  color: #f46036;
+  font-size: 0.9rem;
+`;
+const Name = styled.h4`
+  color: #000000;
+  font-size: 1rem;
 `;
 
 const Linked = styled.div`
@@ -93,8 +101,8 @@ const Linked = styled.div`
     font-size: 1.25rem;
     color: #fff;
   }
-  ${Container}:hover & {
+  /* ${Container}:hover & {
     opacity: 1;
-  }
+  } */
 `;
 export default Product;

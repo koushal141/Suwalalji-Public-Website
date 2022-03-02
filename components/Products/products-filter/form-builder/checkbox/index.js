@@ -1,17 +1,21 @@
+import styled from "styled-components";
+
 const Checkbox = ({ type, label, name, onChange }) => (
-  <label
-    htmlFor={label + "-" + name}
-    className={`checkbox ${type ? "checkbox--" + type : ""}`}
-  >
+  <Label htmlFor={label + "-" + name}>
     <input
       name={name}
       onChange={onChange}
       type="checkbox"
       id={label + "-" + name}
     />
-    <span className="checkbox__check"></span>
     <p>{label}</p>
-  </label>
+  </Label>
 );
+
+const Label = styled.label`
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+`;
 
 export default Checkbox;

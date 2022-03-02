@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scroll, setScroll] = useState(0);
   const router = useRouter();
+  const handleScroll = () => setScroll(window.scrollY);
+
+  // set up listener on window to update scroll state on scroll
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <Nav>
+    <Nav scroll={scroll}>
       <Container path={router.pathname}>
         <Link href="/">
           <Logo>Suwalalji</Logo>
@@ -45,7 +52,6 @@ const Logo = styled.h2`
   font-size: 1.8rem;
   padding: 0.2rem;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
 
   &:hover {
     transform: scale(1.1);
@@ -126,11 +132,17 @@ const Nav = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  position: absolute;
+  position: fixed;
+  background-color: #fff;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 25;
+  z-index: 1000;
+  transition: all 0.2s ease-in-out;
+
+  box-shadow: ${(p) =>
+    p.scroll > 15 ? "0px 6px 24px rgba(186, 186, 186, 0.2)" : "none"};
+  /* box-shadow: 0px 6px 24px rgba(186, 186, 186, 0.2); */
 `;
 
 const Menu = styled.div`

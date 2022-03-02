@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Checkbox from "./form-builder/checkbox";
 import styled from "styled-components";
+import { FaFilter } from "react-icons/fa";
 
 const productsTypes = [
   {
@@ -39,16 +40,14 @@ const ProductsFilter = () => {
         onClick={() => setFiltersOpen(!filtersOpen)}
         isActive={filtersOpen}
       >
-        Add Filter <i className="icon-down-open"></i>
+        <FaFilter />
       </MenuBtn>
       <FilterWrapper isOpen={filtersOpen}>
         <FilterBlock>
-          <button type="button">Product type</button>
-          <BlockContent>
-            {productsTypes.map((type) => (
-              <Checkbox key={type.id} name="product-type" label={type.name} />
-            ))}
-          </BlockContent>
+          <Title>Product type</Title>
+          {productsTypes.map((type) => (
+            <Checkbox key={type.id} name="product-type" label={type.name} />
+          ))}
         </FilterBlock>
         <SubmitBtn type="submit">Apply</SubmitBtn>
       </FilterWrapper>
@@ -57,6 +56,8 @@ const ProductsFilter = () => {
 };
 
 export default ProductsFilter;
+
+const Title = styled.h4``;
 
 const SubmitBtn = styled.button`
   display: block;
@@ -87,11 +88,16 @@ const SubmitBtn = styled.button`
 `;
 
 const FilterWrapper = styled.div`
+  box-shadow: 0px 0px 4px rgba(145, 158, 171, 0.24),
+    0px 16px 32px -4px rgba(145, 158, 171, 0.24);
+  border-radius: 16px;
   width: 300px;
   left: -300px;
-  top: 101px;
+  top: 0;
+  bottom: 0;
   overflow: auto;
   height: calc(100% - 101px);
+  height: 100%;
   flex-shrink: 0;
   position: fixed;
   z-index: 99;
@@ -121,49 +127,28 @@ const FilterWrapper = styled.div`
 
 const MenuBtn = styled.button`
   position: fixed;
-  top: 65px;
-  width: 100%;
-  left: 0;
-  right: 0;
-  padding: 8px 16px;
+  bottom: 1rem;
+  left: 1rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0px 0px 4px rgba(145, 158, 171, 0.24),
+    0px 16px 32px -4px rgba(145, 158, 171, 0.24);
   z-index: 100;
-  font-size: 12px;
-  background-color: #fff;
-  border-bottom: 1px solid #e6e6e6;
-  @media (min-width: 767px) {
-    top: 100px;
-  }
-  @media (min-width: 1024px) {
-    display: none;
-  }
-  i {
-    display: inline-block;
-    transition: all 0.3s ease;
-    transform: rotate({${(props) => (props.isActive ? "90Deg" : "270Deg")}});
+  display: none;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #f46036;
+  font-size: 1.1rem;
+  @media (max-width: 1024px) {
+    display: flex;
   }
 `;
 const FilterBlock = styled.div`
-  padding: 20px 21px;
-  margin-bottom: 13px;
-  border: 1px solid #e6e6e6;
-  @media (min-width: 1024px) {
-    padding: 24px 31px;
-  }
-
-  button {
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    width: 100%;
-    text-transform: uppercase;
-    i {
-      font-size: 21px;
-      margin-left: auto;
-    }
-  }
-`;
-
-const BlockContent = styled.div`
-  padding-top: 25px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
 `;

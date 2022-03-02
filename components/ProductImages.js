@@ -1,71 +1,69 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-const ProductImages = ({ images = [[]] }) => {
+const ProductImages = ({ images = [""] }) => {
   const [main, setMain] = useState(images[0]);
   return (
     <Wrapper>
-      <img src={main.url} alt="" className="main " />
-      <div className="gallery">
+      <ImageCont noAni>
+        <Image src={main.url} alt="" />
+      </ImageCont>
+      <Gallery>
         {images.map((image, index) => {
           return (
-            <img
-              src={image.url}
-              alt=""
+            <ImageCont
               key={index}
-              className={`${image.url === main.url ? "active" : null}`}
-              onClick={() => setMain(images[index])}
-            />
+              active={image.url === main.url ? true : false}
+            >
+              <Image
+                src={image.url}
+                alt=""
+                onClick={() => setMain(images[index])}
+              />
+            </ImageCont>
           );
         })}
-      </div>
+      </Gallery>
     </Wrapper>
   );
 };
 
+const Image = styled.img`
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+`;
+
+const ImageCont = styled.div`
+  width: 100%;
+  padding-top: 70%;
+  background: antiquewhite;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) all 0.25s;
+  border: ${(p) => (p.active ? "2px solid orange" : "none")};
+
+  &:hover {
+    transform: ${(p) => (p.noAni ? "none" : "scale(1.05)")};
+    border: ${(p) => (p.noAni ? "none" : "2px solid orange")};
+  }
+`;
+
 const Wrapper = styled.section`
-  flex: 0.45;
-  .main {
-    height: 600px;
-  }
-  img {
-    width: 100%;
-    display: block;
-    border-radius: var(--radius);
-    object-fit: cover;
-  }
-  .gallery {
-    margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 1rem;
-    img {
-      height: 100px;
-      cursor: pointer;
-    }
-  }
-  .active {
-    border: 2px solid var(--clr-primary-5);
-  }
-  @media (max-width: 576px) {
-    .main {
-      height: 300px;
-    }
-    .gallery {
-      img {
-        height: 50px;
-      }
-    }
-  }
-  @media (min-width: 992px) {
-    .main {
-      height: 500px;
-    }
-    .gallery {
-      img {
-        height: 75px;
-      }
-    }
-  }
+  flex: 0.55;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 1.5rem;
+`;
+
+const Gallery = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+  position: relative;
 `;
 
 export default ProductImages;

@@ -62,8 +62,16 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* <link
+            href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          /> */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800;900&family=Martel+Sans:wght@300;400;600;700;800;900&display=swap"
             rel="stylesheet"
           />
         </Head>

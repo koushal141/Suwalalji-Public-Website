@@ -15,7 +15,6 @@ function Products() {
         <Breadcrumb />
         <Divider>
           <ProductsFilter />
-          {/* <ProductsList /> */}
           <ProductsGrid />
         </Divider>
       </Content>
