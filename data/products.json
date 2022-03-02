@@ -1,0 +1,272 @@
+[
+  {
+    "_id": "2YbrbYnt8GlMppm7FSdG",
+    "name": "Rago mix",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "NlgrEYwE7zcqRm6zxpe4",
+    "name": "Rago mix",
+    "weight": "180g",
+    "wholesalePrice": 32,
+    "retailPrice": 50,
+    "storePrice": 40,
+    "desc": ""
+  },
+  {
+    "_id": "p0LTc3Zh4v6wzGr7Yn7y",
+    "name": "Sada mix",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "A93hkDgu1LoXD2TN9TjD",
+    "name": "Sada mix",
+    "weight": "180g",
+    "wholesalePrice": 32,
+    "retailPrice": 50,
+    "storePrice": 40,
+    "desc": ""
+  },
+  {
+    "_id": "T4pk34PuBCHq7haYLioU",
+    "name": "dil mix 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "RjDxrVixnDIKowWrhm7N",
+    "name": "Khatamitha mix 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "0CewpZGlADVVHBGUHum3",
+    "name": "Chatapata mix 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "6KOA0oySmBW1T44tHn3h",
+    "name": "Corn mix 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "iKJzUVHbjfAL4j6gMiob",
+    "name": "Chana dal 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "JA944PEA8usH1DitPo8k",
+    "name": "Mathi 200g",
+    "weight": "200g",
+    "wholesalePrice": 32,
+    "retailPrice": 50,
+    "storePrice": 40,
+    "desc": ""
+  },
+  {
+    "_id": "qLPGYbRlU577JTPf8HhB",
+    "name": "Kaju Chuda 180g",
+    "weight": "180g",
+    "wholesalePrice": 32,
+    "retailPrice": 60,
+    "storePrice": 40,
+    "desc": ""
+  },
+  {
+    "_id": "7Fn1OeaJ4HAbjd2zfe7T",
+    "name": "Bundi Masala 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "dkKzhgcrjUB1IapwYWaO",
+    "name": "Bundi Plain 180g",
+    "weight": "180g",
+    "wholesalePrice": 32,
+    "retailPrice": 50,
+    "storePrice": 40,
+    "desc": ""
+  },
+  {
+    "_id": "JZpccglyCUoxnWw7WUd7",
+    "name": "Chana Dal 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "36UJJ18lEhhDCybsldd8",
+    "name": "Kaju Mix 400g",
+    "weight": "400g",
+    "wholesalePrice": 66,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "kuZHOrVswm8GcCYWfxn4",
+    "name": "Masala Bhujia",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "pcgWCrfu5uqxmTVrXxuH",
+    "name": "Masala Bhujia",
+    "weight": "180g",
+    "wholesalePrice": 32,
+    "retailPrice": 50,
+    "storePrice": 40,
+    "desc": ""
+  },
+  {
+    "_id": "1i51GSmeJEX3kF0GvCoz",
+    "name": "Jhal Mudi Mix 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "8MNJC13DcugZA7ZJtNOZ",
+    "name": "Kashmiri Dalmoth 400g",
+    "weight": "400g",
+    "wholesalePrice": 92,
+    "retailPrice": 120,
+    "storePrice": 100,
+    "desc": ""
+  },
+  {
+    "_id": "rmKCq9Tu9JG6YPPvOm94",
+    "name": "Moong Dal",
+    "weight": "400g",
+    "wholesalePrice": 92,
+    "retailPrice": 120,
+    "storePrice": 100,
+    "desc": ""
+  },
+  {
+    "_id": "cNMqNgDYGIir1aE1xzEa",
+    "name": "Moong Dal",
+    "weight": "180g",
+    "wholesalePrice": 46,
+    "retailPrice": 60,
+    "storePrice": 50,
+    "desc": ""
+  },
+  {
+    "_id": "E2L0Ap3TIDVp7TJluXmd",
+    "name": "Seo",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "TiOkv4CgbT3mtrglucOL",
+    "name": "Seo",
+    "weight": "180g",
+    "wholesalePrice": 32,
+    "retailPrice": 50,
+    "storePrice": 40,
+    "desc": ""
+  },
+  {
+    "_id": "WewoMR59NQNCo5YvyXvF",
+    "name": "Seo Ganthia 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "SgFn5lwni5MoqFOt5iuX",
+    "name": "Bhavnagri Ganthia 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "QWwRiT2sO0nfi6nPePyk",
+    "name": "Phool Ganthia 400g",
+    "weight": "400g",
+    "wholesalePrice": 64,
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "2brNs7buUkV8rtbA6ZXL",
+    "name": "Badam Masala 180g",
+    "weight": "180g",
+    "wholesalePrice": 32,
+    "retailPrice": 50,
+    "storePrice": 40,
+    "desc": ""
+  },
+  {
+    "_id": "Jj1mVpik47JtYsoYdHcU",
+    "name": "Badam Pakoda 180g",
+    "weight": "180g",
+    "wholesalePrice": 32,
+    "retailPrice": 50,
+    "storePrice": 40,
+    "desc": ""
+  },
+  {
+    "_id": "STYxFCuhIlmlBKOlz5P9",
+    "name": "Kaju Mix",
+    "weight": "400g",
+    "wholesalePrice": "",
+    "retailPrice": 100,
+    "storePrice": 75,
+    "desc": ""
+  },
+  {
+    "_id": "NZVFCxnFFsoNZZTYhvbo",
+    "name": "BHUJIA SEO 400g",
+    "weight": "400g",
+    "wholesalePrice": 100,
+    "retailPrice": 120,
+    "storePrice": 100,
+    "desc": ""
+  }
+]
