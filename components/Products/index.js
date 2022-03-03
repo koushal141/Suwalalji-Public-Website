@@ -50,12 +50,19 @@ const Wrapper = styled.div`
   height: 100%;
   display: grid;
   gap: 2rem 1.5rem;
+  padding-bottom: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 
   @media (min-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
+    padding-left: 0;
+    padding-right: 0;
   }
   @media (min-width: 1170px) {
     grid-template-columns: repeat(3, 1fr);
+    padding-left: 0;
+    padding-right: 0;
   }
 `;
 

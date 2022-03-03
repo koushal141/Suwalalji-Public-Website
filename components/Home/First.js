@@ -22,14 +22,12 @@ function First() {
         <ChilliSpoon src="/images/SpicesBottomLeft.png" />
       </Cont1>
       <Cont2>
-        {/* <Peanuts src="/images/Peanuts.png" /> */}
         <Image src="/images/Suwalalji - Group.png" />
-        <svg
+        <Wave
           id="visual"
           viewBox="0 0 960 540"
           width={"80vw"}
           height={"100vh"}
-          style={{ position: "absolute", right: 0 }}
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
           version="1.1"
@@ -41,8 +39,7 @@ function First() {
               fill="#ea9032"
             />
           </g>
-        </svg>
-        {/* </SVGCont> */}
+        </Wave>
       </Cont2>
     </Container>
   );
@@ -51,45 +48,66 @@ function First() {
 export default First;
 
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  column-gap: 2rem;
+
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+  }
+`;
+
+const Wave = styled.svg`
+  position: absolute;
+  top: 0;
+  right: 0;
+  @media (max-width: 900px) {
+    top: -20%;
+  }
+  @media (max-width: 600px) {
+    top: -45%;
+  }
 `;
 
 const Cont1 = styled.div`
-  flex: 0.6;
-  background: #fff;
+  flex: 0.55;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-left: 2rem;
+  row-gap: 1rem;
+  @media (max-width: 900px) {
+    justify-content: flex-start;
+  }
+  @media (max-width: 760px) {
+    padding: 0 1rem;
+    row-gap: 0.75rem;
+  }
 `;
 const Cont2 = styled.div`
-  flex: 0.4;
-  background: #fff;
+  flex: 0.45;
   width: 100%;
-  overflow: hidden;
-  //   background: #ea9032;
-`;
-
-const SVGCont = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  overflow: hidden;
+  position: relative;
+  /* @media (max-width: 900px) {
+    flex: 0.5;
+  } */
 `;
 
 const Image = styled.img`
-  height: 90vh;
+  width: 130%;
+  object-fit: contain;
   position: absolute;
   z-index: 20;
   right: 0;
   top: 0;
   bottom: 0;
+  height: 100%;
+  @media (max-width: 900px) {
+    inset: 0;
+    width: 100%;
+  }
 `;
 
 const ChilliSpoon = styled.img`
@@ -98,30 +116,42 @@ const ChilliSpoon = styled.img`
   z-index: 15;
   left: 0;
   bottom: 0;
-`;
-
-const Peanuts = styled.img`
-  height: 6rem;
-  position: absolute;
-  z-index: 15;
-  right: 10px;
-  top: 10px;
+  @media (max-width: 1100px) {
+    height: 10rem;
+  }
+  @media (max-width: 900px) {
+    height: 7rem;
+  }
 `;
 
 const Slogan = styled.h2`
   font-weight: 800;
   font-size: 4rem;
   color: #ea9032;
-  margin: 0;
   z-index: 20;
+  @media (max-width: 1100px) {
+    font-size: 3.7rem;
+  }
+  @media (max-width: 900px) {
+    font-size: 3.2rem;
+  }
+  @media (max-width: 760px) {
+    font-size: 2.8rem;
+  }
 `;
 
 const SubSlogan = styled.p`
   font-weight: 800;
   font-size: 1.6rem;
   color: #ea9032;
-  margin: 0;
   z-index: 20;
+
+  @media (max-width: 1100px) {
+    font-size: 1.4rem;
+  }
+  @media (max-width: 900px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const BrowseButton = styled.button`
@@ -134,7 +164,6 @@ const BrowseButton = styled.button`
   background: #ea9032;
   cursor: pointer;
   border-radius: 2rem;
-  margin: 1rem 0;
   z-index: 20;
   transition: ease-in-out 0.2s all;
   display: flex;
@@ -143,5 +172,10 @@ const BrowseButton = styled.button`
   &:hover {
     color: #ea9032;
     background: #fff;
+  }
+
+  @media (max-width: 900px) {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
   }
 `;

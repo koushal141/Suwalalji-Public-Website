@@ -17,7 +17,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   background: #ea9032;
-  border-top: 1px solid #fff;
 `;
 const Sign = styled.h4`
   font-weight: 500;

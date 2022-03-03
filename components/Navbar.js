@@ -15,7 +15,7 @@ const Navbar = () => {
   }, []);
   return (
     <Nav scroll={scroll}>
-      <Container path={router.pathname}>
+      <Container path={router.pathname} scroll={scroll}>
         <Link href="/">
           <Logo>Suwalalji</Logo>
         </Link>
@@ -113,7 +113,9 @@ const Container = styled.div`
 
   a {
     text-decoration: none;
-    color: ${({ path }) => (path == "/" ? "#fff" : "#000000")};
+    color: ${(p) =>
+      p.path == "/" ? (p.scroll > 15 ? "#000000" : "#fff") : "#000000"};
+
     font-size: 0.9rem;
     padding: 0.7rem 1.5rem;
     transition: all 0.2s ease-in;
@@ -133,7 +135,7 @@ const Nav = styled.div`
   align-items: center;
   flex-wrap: wrap;
   position: fixed;
-  background-color: #fff;
+  background-color: ${(p) => (p.scroll > 15 ? "#FFF" : "transparent")};
   top: 0;
   left: 0;
   right: 0;
@@ -143,6 +145,9 @@ const Nav = styled.div`
   box-shadow: ${(p) =>
     p.scroll > 15 ? "0px 6px 24px rgba(186, 186, 186, 0.2)" : "none"};
   /* box-shadow: 0px 6px 24px rgba(186, 186, 186, 0.2); */
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
 `;
 
 const Menu = styled.div`

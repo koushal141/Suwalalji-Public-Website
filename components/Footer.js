@@ -51,7 +51,6 @@ const Container = styled.div`
   padding: 0rem 2rem;
   background: #ea9032;
   margin: 0 auto;
-  margin-top: 1rem;
   padding: 1.5rem 0;
   a {
     text-decoration: none;

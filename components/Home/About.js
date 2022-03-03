@@ -11,12 +11,11 @@ function About() {
         <Cont1>
           <Image src="/images/Suwalalji - Flying.png" />
 
-          <svg
+          <SVG
             id="visual"
             viewBox="0 0 960 540"
             width={960}
             height={"65vh"}
-            style={{ position: "absolute", left: 0, bottom: 0 }}
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             version="1.1"
@@ -27,7 +26,7 @@ function About() {
                 fill="#ea9032"
               />
             </g>
-          </svg>
+          </SVG>
         </Cont1>
         <Cont2>
           <Title>About</Title>
@@ -55,6 +54,7 @@ const Container = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 const Heading = styled.div`
@@ -71,43 +71,68 @@ const Title = styled.h2`
   margin: 0;
 `;
 
+const SVG = styled.svg`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  z-index: 10;
+  @media (max-width: 1100px) {
+    bottom: -10%;
+  }
+`;
+
 const Divider = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  background: #fff;
+  @media (max-width: 900px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const Cont1 = styled.div`
   flex: 0.35;
-  background: #fff;
   width: 100%;
-  overflow: hidden;
   position: relative;
   min-height: calc(65vh + 2rem);
+  @media (max-width: 900px) {
+    flex: 1;
+  }
 `;
 
 const Cont2 = styled.div`
   flex: 0.65;
-  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 5rem;
+  z-index: 19;
+  @media (max-width: 900px) {
+    padding: 2rem 1.5rem;
+    flex: 1;
+  }
 `;
 
 const Image = styled.img`
-  height: 65vh;
   position: absolute;
   z-index: 20;
   left: 0;
   top: 0;
   bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 `;
 
 const Para = styled.p`
   font-size: 1.25rem;
   font-weight: 500;
+  @media (max-width: 900px) {
+    font-size: 1.15rem;
+  }
 `;
