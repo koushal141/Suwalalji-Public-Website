@@ -41,17 +41,21 @@ function Footer() {
 export default Footer;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
   max-width: 1200px;
   width: 100%;
   padding: 0rem 2rem;
   background: #ea9032;
   margin: 0 auto;
   padding: 1.5rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   a {
     text-decoration: none;
     color: #fff;
@@ -72,12 +76,10 @@ const Partition = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 20vw;
 `;
 
 const Heading = styled.h4`
   color: #fff;
-  margin: 0;
 `;
 
 const Link = styled.a`

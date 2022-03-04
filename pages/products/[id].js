@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Head from "next/head";
 import ProductImages from "../../components/ProductImages";
@@ -31,19 +31,19 @@ function Product({ product }) {
   return (
     <Wrapper>
       <Head>
-        <title>{product.name}</title>
+        <title>{product.name + " " + product.weight}</title>
       </Head>
       <Breadcrumb title={product.name} />
       <Divider>
         <ProductImages
           images={[
+            { url: product.image },
             { url: "/images/Suwalalji - Flying.png" },
-            { url: "/images/Suwalalji - Group.png" },
             { url: "/images/Suwalalji - Tilted.png" },
           ]}
         />
         <Details>
-          <Title>{product.name}</Title>
+          <Title>{product.name + " " + product.weight}</Title>
           <SubTitle>By Suwalalji</SubTitle>
           <Price>₹{product.retailPrice - 1}</Price>
           <Desc>

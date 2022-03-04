@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { FaSearch, FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 const Product = ({ image, name, price, id }) => {
+  console.log(image);
   return (
     <Link href={`/products/${id}`} passHref>
       <Wrapper>
@@ -14,13 +15,6 @@ const Product = ({ image, name, price, id }) => {
             <FaArrowRight />
           </GoButton>
         </Dets>
-        {/* <Linked>
-            <FaSearch />
-          </Linked> */}
-        {/* <footer>
-        <h5>{name}</h5>
-        <p>₹{price}</p>
-      </footer> */}
       </Wrapper>
     </Link>
   );
@@ -82,27 +76,4 @@ const Name = styled.h4`
   font-size: 1rem;
 `;
 
-const Linked = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: hsl(22, 31%, 52%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  transition: ease-in-out 0.3s all;
-  opacity: 0;
-
-  svg {
-    font-size: 1.25rem;
-    color: #fff;
-  }
-  /* ${Container}:hover & {
-    opacity: 1;
-  } */
-`;
 export default Product;

@@ -27,6 +27,7 @@ const Breadcrumb = ({ title }) => (
 export default Breadcrumb;
 
 const Container = styled.section`
+  margin: 0.5rem 2rem;
   padding: 20px 0 20px 0;
   display: flex;
   align-items: center;

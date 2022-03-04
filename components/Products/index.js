@@ -7,15 +7,17 @@ import Link from "next/link";
 function ProductsGrid() {
   return (
     <Wrapper>
-      {products.map((pro) => (
-        <Product
-          key={pro._id}
-          image="/images/Suwalalji - Flying.png"
-          name={pro.name}
-          price={pro.retailPrice - 1}
-          id={pro._id}
-        />
-      ))}
+      {products
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((pro) => (
+          <Product
+            key={pro._id}
+            image={pro.image}
+            name={pro.name + " " + pro.weight}
+            price={pro.retailPrice - 1}
+            id={pro._id}
+          />
+        ))}
     </Wrapper>
   );
 }

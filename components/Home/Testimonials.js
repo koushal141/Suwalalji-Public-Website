@@ -4,9 +4,9 @@ import { AiFillStar } from "react-icons/ai";
 
 const testimonials = [
   {
-    img: "",
-    name: "Meena Jain",
-    text: "Huge variety of products. Always fresh.",
+    img: "https://lh3.googleusercontent.com/a-/AOh14Ghq5hG2OC0v_WqP7Wvth_mcR6emiyj4ATrR0QpNK5E=w75-h75-p-rp-mo-br100",
+    name: "Rajesh Agarwalla",
+    text: "Amazing namkeen, Sab ko ek bar to try karna chahiye",
     stars: 5,
   },
   {
