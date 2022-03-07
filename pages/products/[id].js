@@ -3,11 +3,10 @@ import styled from "styled-components";
 import Head from "next/head";
 import ProductImages from "../../components/ProductImages";
 import Breadcrumb from "../../components/Breadcrumb";
+import db from "../../data/products.json";
 
 export async function getStaticPaths() {
-  const res = await fetch(`https://suwalalji-website.vercel.app/api/products`);
-  const products = await res.json();
-  const paths = products.map((pro) => {
+  const paths = db.map((pro) => {
     return {
       params: { id: pro._id.toString() },
     };
@@ -20,10 +19,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const id = context.params.id;
-  const res = await fetch(
-    `https://suwalalji-website.vercel.app/api/products/` + id
-  );
-  const product = await res.json();
+
+  const product = db.find((fil) => fil._id === id);
   return {
     props: { product },
   };
