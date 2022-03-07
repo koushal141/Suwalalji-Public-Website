@@ -5,9 +5,7 @@ import ProductImages from "../../components/ProductImages";
 import Breadcrumb from "../../components/Breadcrumb";
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    `https://suwalalji-website-r982mn9ly-koushal141.vercel.app/api/products`
-  );
+  const res = await fetch(`https://suwalalji-website.vercel.app/api/products`);
   const products = await res.json();
   const paths = products.map((pro) => {
     return {
@@ -23,8 +21,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const id = context.params.id;
   const res = await fetch(
-    `https://suwalalji-website-r982mn9ly-koushal141.vercel.app/api/products/` +
-      id
+    `https://suwalalji-website.vercel.app/api/products/` + id
   );
   const product = await res.json();
   return {
