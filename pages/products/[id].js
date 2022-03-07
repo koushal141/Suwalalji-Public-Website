@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Head from "next/head";
 import ProductImages from "../../components/ProductImages";
 import Breadcrumb from "../../components/Breadcrumb";
 import db from "../../data/products.json";
+import HeadTag from "../../components/HeadTag";
 
 export async function getStaticPaths() {
   const paths = db.map((pro) => {
@@ -29,9 +29,10 @@ export async function getStaticProps(context) {
 function Product({ product }) {
   return (
     <Wrapper>
-      <Head>
-        <title>{product.name + " " + product.weight}</title>
-      </Head>
+      <HeadTag
+        title={product.name + " " + product.weight}
+        img={product.image}
+      />
       <Breadcrumb title={product.name} />
       <Divider>
         <ProductImages
