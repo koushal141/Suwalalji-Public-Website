@@ -5,17 +5,20 @@ import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scroll, setScroll] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
-  const handleScroll = () => setScroll(window.scrollY);
+  const handleScroll = () => {
+    if (window.scrollY > 15) setScrolled(true);
+    else setScrolled(false);
+  };
 
   // set up listener on window to update scroll state on scroll
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, []);
   return (
-    <Nav scroll={scroll}>
-      <Container path={router.pathname} scroll={scroll}>
+    <Nav scrolled={scrolled}>
+      <Container path={router.pathname} scrolled={scrolled}>
         <Link href="/">
           <Logo>Suwalalji</Logo>
         </Link>
@@ -27,7 +30,7 @@ const Navbar = () => {
         </Hamburger>
         <Menu isOpen={isOpen}>
           <LinkWrapper>
-            <Link href="" passHref>
+            <Link href="/#About" passHref>
               <MenuLink>About</MenuLink>
             </Link>
             <Link href="/products" passHref>
@@ -114,7 +117,7 @@ const Container = styled.div`
   a {
     text-decoration: none;
     color: ${(p) =>
-      p.path == "/" ? (p.scroll > 15 ? "#000000" : "#fff") : "#000000"};
+      p.path == "/" ? (p.scrolled ? "#000000" : "#fff") : "#000000"};
 
     font-size: 0.9rem;
     padding: 0.7rem 1.5rem;
@@ -135,7 +138,7 @@ const Nav = styled.div`
   align-items: center;
   flex-wrap: wrap;
   position: fixed;
-  background-color: ${(p) => (p.scroll > 15 ? "#FFF" : "transparent")};
+  background-color: ${(p) => (p.scrolled ? "#FFF" : "transparent")};
   top: 0;
   left: 0;
   right: 0;
@@ -143,7 +146,7 @@ const Nav = styled.div`
   transition: all 0.2s ease-in-out;
 
   box-shadow: ${(p) =>
-    p.scroll > 15 ? "0px 6px 24px rgba(186, 186, 186, 0.2)" : "none"};
+    p.scrolled ? "0px 6px 24px rgba(186, 186, 186, 0.2)" : "none"};
   /* box-shadow: 0px 6px 24px rgba(186, 186, 186, 0.2); */
   @media (max-width: 768px) {
     padding: 1rem 0;
@@ -163,12 +166,12 @@ const Menu = styled.div`
       background-color: rgba(255, 255, 255, 0.4);
     }
     border-radius: 1rem;
-    margin-top: 1rem;
+    margin-top: ${({ isOpen }) => (isOpen ? "1rem" : "0")};
     box-shadow: -4px 8px 15px 1px rgba(0, 0, 0, 0.07);
     overflow: hidden;
     flex-direction: column;
     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
-    transition: max-height 0.3s ease-in;
+    transition: all 0.3s ease-in;
     width: 100%;
   }
 `;

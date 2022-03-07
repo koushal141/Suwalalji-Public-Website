@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 const Product = ({ image, name, price, id }) => {
-  console.log(image);
   return (
     <Link href={`/products/${id}`} passHref>
       <Wrapper>

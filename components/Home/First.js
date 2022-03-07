@@ -13,10 +13,7 @@ function First() {
           Indian Snacks
         </Slogan>
         <SubSlogan>Tea Time, Tv Time, Snack Time, Anytime</SubSlogan>
-        <BrowseButton
-          title="Browse Products"
-          onClick={() => router.push("/products")}
-        >
+        <BrowseButton onClick={() => router.push("/products")}>
           Browse Products <BsArrowRightShort size={30} />
         </BrowseButton>
         <ChilliSpoon src="/images/SpicesBottomLeft.png" />

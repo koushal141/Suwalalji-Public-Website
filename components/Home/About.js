@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function About() {
   return (
-    <Container>
+    <Container id="About">
       {/* <Heading>
         <Title>About</Title>
       </Heading> */}

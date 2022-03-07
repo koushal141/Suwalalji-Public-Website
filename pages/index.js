@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Head from "next/head";
 import First from "../components/Home/First";
 import About from "../components/Home/About";
 import Testimonials from "../components/Home/Testimonials";
+import ProductsCarousel from "../components/Home/ProductsCarousel";
 
 function LandingPage() {
   return (
@@ -14,6 +15,7 @@ function LandingPage() {
       <First />
       <About />
       <Testimonials />
+      <ProductsCarousel />
     </Container>
   );
 }

@@ -53,7 +53,7 @@ function Testimonials() {
 
 export default Testimonials;
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
